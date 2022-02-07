@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="FAQ" th:fragment="faqs">
+    <strong class="FAQ-title">Наиболее частые вопросы:
+    </strong>
+    <div class="HideBlock FAQ-block" th:each="faq : ${faqList}">
+        <header class="HideBlock-header HideBlock-trigger">
+            <strong class="HideBlock-title" th:text="${faq.question}">Что делать, если я не нашел нужный товар
+            </strong>
+            <button class="HideBlock-btn" type="button">
+            </button>
+        </header>
+        <div class="HideBlock-content">
+            <p th:text="${faq.answer}">Если вы ввели в строке поиска название товара и увидели сообщение «Простите, по вашему
+                запросу товаров сейчас нет», это значит, что такого товара у нас в ассортименте пока нет.
+            </p>
+        </div>
+    </div>
+    <div class="FAQ-footer">
+        <p class="FAQ-link">Или&#32;<a href="/contacts.html" th:href="@{/contacts}">свяжитесь с нами</a>
+        </p>
+    </div>
+</div>
